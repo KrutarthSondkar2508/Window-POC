@@ -1,0 +1,272 @@
+<!--<div class="main-header">
+  <div class="header-logo">
+    <img src="../assets/img/logo.png">
+  </div>
+  <div class="header-title">Quick Quote</div>
+</div>-->
+<div class="main-sidebar collapse show" id="CollapseExpandSidebar">
+  <div class="sidebar-nav">
+    <ul>
+      <li>
+        <a href="#JobInformation" class="active nav-link"><i class="icon-icon1"></i></a>
+      </li>
+      <li>
+        <a href="#CodesLoads" class="nav-link"><i class="icon-icon2"></i></a>
+      </li>
+      <li>
+        <a href="#Geometry" class="nav-link"><i class="icon-icon3"></i></a>
+      </li>
+      <li>
+        <a href="#GirtsSpacing" class="nav-link"><i class="icon-icon4"></i></a>
+      </li>
+      <li>
+        <a href="#Endwalls" class="nav-link"><i class="icon-icon5"></i></a>
+      </li>
+      <li>
+        <a href="#Roof" class="nav-link"><i class="icon-icon6"></i></a>
+      </li>
+      <li>
+        <a href="#Walls" class="nav-link"><i class="icon-icon7"></i></a>
+      </li>
+      <li>
+        <a href="#Trim" class="nav-link"><i class="icon-icon8"></i></a>
+      </li>
+      <li>
+        <a href="#Loads" class="nav-link"><i class="icon-icon9"></i></a>
+      </li>
+      <li>
+        <a href="#Accessories" class="nav-link"><i class="fas fa-tools fa-fw"></i></a>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-controls scrollspy-example" data-bs-spy="scroll" data-bs-target=".sidebar-nav" data-bs-offset="0">
+    <div class="row">
+      <div class="col-12">
+        <div id="JobInformation">
+          <div class="section_title">Window POC</div>
+          <div class="padding_new">
+            <div class="row my-2">
+              <div class="col-12">
+                <label>Building Length </label>
+                <div class="form-group mb-0">
+                  <input type="text" class="form-control" (change)="LengthChange($event.target.value)" value="100">
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-12">
+                <label>Building Width </label>
+                <div class="form-group mb-0">
+                  <input type="text" class="form-control" (change)="WidthChange($event.target.value)" value="100">
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-12">
+                <label>Building Heigth </label>
+                <div class="form-group mb-0">
+                  <input type="text" class="form-control" (change)="HeigthChange($event.target.value)" value="50">
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-12">
+                <label>Building Slop </label>
+                <div class="form-group mb-0">
+                  <input type="text" class="form-control" (change)="SlopChange($event.target.value)" value="20">
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-12">
+                <label>Material</label>
+                <div class="form-group select-icon mb-0">
+                  <select class="custom-select form-control-border">
+                    <option value="Risk Category 1" selected> Vinyl </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <label>Window</label>
+              <div class="col-6" title="Triple Slider">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Window/Mist/Window_Triple_Slider.png" class="winClass" (click)="imageClick('Window_Triple_Slider')">
+                </div>
+              </div>
+              <div class="col-6" title="Single Slider">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Window/Mist/Window_Single_Slider.png" class="winClass" (click)="imageClick('Window_Single_Slider')">
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-6" title="Triple Slider Grill">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Window/Mist/Window_Single_Slider_Grill.png" class="winClass" (click)="imageClick('Window_Triple_Slider_Grill')">
+                </div>
+              </div>
+              <div class="col-6" title="Single Slider Grill">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Window/Mist/Window_Single_Slider_Grill.png" class="winClass" (click)="imageClick('Window_Single_Slider_Grill')">
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <label>Color</label>
+              <div class="col-6" title="Triple Slider">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Color/Almond.jpg" class="winClass" (click)="colorPicker('Almond')">
+                </div>
+              </div>
+              <div class="col-6" title="Single Slider">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Color/Mist.jpg" class="winClass" (click)="colorPicker('Mist')">
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-6" title="Triple Slider Grill">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Color/Olive.jpg" class="winClass" (click)="colorPicker('Red')">
+                </div>
+              </div>
+              <div class="col-6" title="Single Slider Grill">
+                <div class="form-group  mb-0">
+                  <img src="../assets/Color/Red.jpg" class="winClass" (click)="colorPicker('Red')">
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <label>Series</label>
+                <div class="form-group select-icon mb-0">
+                  <select class="custom-select form-control-border">
+                    <option value="Risk Category 1" selected> 1500 Brickmould </option>
+                    <option value="Risk Category 2"> 1500 Impact Brickmould </option>
+                    <option value="Risk Category 3"> 1500 Beveled </option>
+                    <option value="Risk Category 4"> 1500 Casements & Patio Doors </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-12">
+                <label>Product Group</label>
+                <div class="form-group select-icon mb-0">
+                  <select class="custom-select form-control-border"
+                    (change)="onChangeProducrGroup($event.target.value)">
+                    <option value="123" selected> None </option>
+                    <option value="Single_Slider"> Slider </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label>Product</label>
+                <div class="form-group select-icon mb-0">
+                  <select class="custom-select form-control-border" (change)="onChangeProduct($event.target.value)">
+                    <option value="" selected> None </option>
+                    <option value="Single_Slider"> Single Slider </option>
+                    <option value="Triple_Slider"> Triple Slider </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label>Number Wide</label>
+                <div class="form-group select-icon mb-0">
+                  <select class="custom-select form-control-border">
+                    <option value="Thermal Condition" selected>1 </option>
+                    <option value="Thermal Condition"> 2 </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-12">
+                <label>Grille Type</label>
+                <div class="form-group select-icon mb-0">
+                  <select class="custom-select form-control-border" (change)="onChangeGrillType($event.target.value)">
+                    <option value="" selected>None </option>
+                    <option value="Single_Slider_Grill">3/4" Flat GBG </option>
+                    <option value="Triple_Slider_Grill">3/4" Flat GBG </option>
+                  </select>
+                </div>
+              </div>
+            </div> -->
+            <div class="row">
+              <div class="col-12">
+                <label>Grille Pattern</label>
+                <div class="form-group select-icon mb-0">
+                  <select class="custom-select form-control-border" (change)="onChangeGrillTypePettern()">
+                    <option value="Thermal Condition" selected>None </option>
+                    <option value="Single_Slider_grill">Colonial</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-content" [ngClass]="status ? 'expand' : 'noexpand'">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-12">
+        <div>
+          <!--<img src="../assets/img/3d-image.png">-->
+          <app-drawing></app-drawing>
+        </div>
+        <div class="collapse-expand">
+          <button class="btn btn-sm btn-primary px-2 py-3" (click)="clickEvent()" data-bs-toggle="collapse"
+            data-bs-target="#CollapseExpandSidebar"><i class="fas fa-chevron-left fa-fw"></i></button>
+        </div>
+        <div class="icon-set-left-top icons-canvas">
+          <ul>
+            <li><i class="icon-icon18"></i></li>
+            <li><i class="icon-icon16"></i></li>
+            <li><i class="icon-icon12"></i></li>
+          </ul>
+        </div>
+        <div class="icon-set-right-top icons-canvas">
+          <ul>
+            <li><i class="icon-icon11"></i></li>
+            <li>
+              <img src="../assets/img/front-side.png">
+            </li>
+            <li>
+              <img src="../assets/img/back-side.png">
+            </li>
+            <li>
+              <img src="../assets/img/left-side.png">
+            </li>
+            <li>
+              <img src="../assets/img/right-side.png">
+            </li>
+          </ul>
+        </div>
+        <div class="icon-set-left-bottom icons-canvas">
+          <ul>
+            <li><i class="icon-icon13"></i></li>
+            <li><i class="icon-icon19"></i></li>
+            <li><i class="icon-icon20"></i></li>
+            <li><i class="icon-icon22"></i></li>
+            <li><i class="icon-icon23"></i></li>
+            <li>
+              <i class="icon-icon17">
+                <span class="path1"></span>
+                <span class="path2"></span>
+              </i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
