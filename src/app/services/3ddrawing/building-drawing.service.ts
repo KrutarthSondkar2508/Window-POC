@@ -437,130 +437,76 @@ export class BuildingDrawingService {
     let uvsC = [7, 0, 7, 7, 0, 0, 7, 7, 7 ];
     // this.setvertexData(RoofC, indices, uvsC, Roof_C)
     // Roof_C.material =this.setMaterial("../../../assets/Textuers/Roofs/horizontal-panel.c0375f82.png")
-
    
-   
-//for base
-    let base= BABYLON.CreatePlane("base",{size:length*1.2,width:width*1.2},this.scene)
-    base.rotation.x = Math.PI / 2;
-    base.position.y = 3;
-    base.position.x = width/2;
-    base.position.z = length/2;
-    base.material = this.setMaterial("../../../assets/Textuers/Ground/patchy_cement1_Base_Color.jpg")
+    //for base
+    this.CreateCommonPlane("base",{size:length*1.2,width:width*1.2},new BABYLON.Vector3(Math.PI / 2,0,0),new BABYLON.Vector3(width/2,3,length/2),"../../../assets/Textuers/Ground/patchy_cement1_Base_Color.jpg")
 
-//for upper side bays
-this.CreateCommonPlane(BABYLON.CreatePlane("sideBay",{height:length,width:50},this.scene),new BABYLON.Vector3(0,Math.PI/2,Math.PI/2),new BABYLON.Vector3(width + 50,hight - 10,length/2), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("sideBay",{height:length,width:25},this.scene),new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(width + 39, hight + 15,length/2), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("sideBay",{height:length,width:25},this.scene),new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(width + 39, hight - 35,length/2), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("sideBay",{height:length,width:50},this.scene),new BABYLON.Vector3(0,Math.PI/2,Math.PI/2),new BABYLON.Vector3(-37.5,hight - 10,length/2), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("sideBay",{height:length,width:25},this.scene),new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(-25, hight + 15,length/2), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("sideBay",{height:length,width:25},this.scene),new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(-25, hight - 35,length/2), this.materialStell)
-//end upper side bays
-
-//back middel bay
-this.CreateCommonPlane(BABYLON.CreatePlane("MiidleBayback",{height:hight+RoofSlop,width:50},this.scene),new BABYLON.Vector3(0,0,0),new BABYLON.Vector3((width/2), (hight + RoofSlop)/2 ,length), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("MiidleBayback",{height:hight+RoofSlop,width:50},this.scene),new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3((width/2)+25, (hight + RoofSlop)/2 , length-12.5), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("MiidleBayback",{height:hight+RoofSlop,width:25},this.scene),new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3((width/2)-25, (hight + RoofSlop)/2 , length-12.5), this.materialStell)
-
-
-//front middle bay   
-this.CreateCommonPlane(BABYLON.CreatePlane("MiidleBayfront",{height:hight+RoofSlop,width:50},this.scene),new BABYLON.Vector3(0,0,0),new BABYLON.Vector3((width/2), (hight + RoofSlop)/2 , 0), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("MiidleBayfront",{height:hight+RoofSlop,width:25},this.scene),new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3((width/2)+25, (hight + RoofSlop)/2 , -12.5), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("MiidleBayfront",{height:hight+RoofSlop,width:25},this.scene),new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3((width/2)-25, (hight + RoofSlop)/2 , -12.5), this.materialStell)
-
-
-     let box=[];
-     let box1= [];
-     let box2= [];
-     let box3= [];
-     let box4= [];
-     let box5= [];
-     let Roof_C_Bay = [];
-     let Roof_C_Bay1 = [];
-     let Roof_C_Bay2 = [];
-     let Roof_A_Bay = [];
-     let Roof_A_Bay1 = [];
-     let Roof_A_Bay2 = [];
-     for(let i=0 ; i<=Math.round(length/300)+1;i++){
-       //for upperbays
-this.CreateCommonPlane(BABYLON.CreatePlane("bays",{height:hight,width:50},this.scene),new BABYLON.Vector3(0,0,0),new BABYLON.Vector3(13,hight/2 ,(length/((length/300)+1)) * i), this.materialStell)
-this.CreateCommonPlane(BABYLON.CreatePlane("bays",{height:hight,width:25},this.scene),new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3(-12,hight/2 ,((length/((length/300)+1)) * i)-12.5), this.materialStell)
-
-       
-       box2[i] = BABYLON.CreatePlane("bays",{height:hight,width:25},this.scene)
-       box2[i].position.y = (hight/2);
-       box2[i].position.x = 38;
-       box2[i].rotation.y = Math.PI / 2;
-       box2[i].position.z = ((length/((length/300)+1)) * i) - 12.5;
-       box2[i].material = this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Base_Color (2).jpg")
-
-       box3[i] = BABYLON.CreatePlane("bays",{height:hight,width:50},this.scene)
-       box3[i].position.y = hight/2 ;
-       box3[i].position.x = width; 
-       box3[i].position.z = ((length/((length/300)+1)) * i);                    
-       box3[i].material = this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Roughness.jpg")
-     
-       box4[i] = BABYLON.CreatePlane("bays",{height:hight,width:25},this.scene)
-       box4[i].position.y = hight/2;
-       box4[i].position.x = width - 25;
-       box4[i].rotation.y = Math.PI / 2;
-       box4[i].position.z = ((length/((length/300)+1)) * i) - 12.5;
-       box4[i].material = this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Base_Color (2).jpg")
-       
-       box5[i] = BABYLON.CreatePlane("bays",{height:hight,width:25},this.scene)
-       box5[i].position.y = hight/2;
-       box5[i].position.x = width + 25;
-       box5[i].rotation.y = Math.PI / 2;
-       box5[i].position.z = ((length/((length/300)+1)) * i) - 12.5;
-       box5[i].material = this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Base_Color (2).jpg")
-
-      //end Upper bays
-
-
-      //for upper roof
-      Roof_C_Bay[i] = BABYLON.CreatePlane("upperroofBay1",{} ,this.scene);
-      this.setvertexData(RoofC_Bay, indices, uvsC, Roof_C_Bay[i])
-      Roof_C_Bay[i].position.z = ((length/((length/300)+1)) * i)
-      Roof_C_Bay[i].material =this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Roughness.jpg")
-
-      Roof_C_Bay1[i] = BABYLON.CreatePlane("upperroofBay1",{} ,this.scene);
-      this.setvertexData(RoofC_Bay1, indices, uvsC, Roof_C_Bay1[i])
-      Roof_C_Bay1[i].position.z = ((length/((length/300)+1)) * i)-25
-      Roof_C_Bay1[i].material =this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Base_Color (2).jpg")
-
-      Roof_C_Bay2[i] = BABYLON.CreatePlane("upperroofBay1",{} ,this.scene);
-      this.setvertexData(RoofC_Bay2, indices, uvsC, Roof_C_Bay2[i])
-      Roof_C_Bay2[i].position.z = ((length/((length/300)+1)) * i)-25
-      Roof_C_Bay2[i].material =this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Base_Color (2).jpg")
-
-      Roof_A_Bay[i] = BABYLON.CreatePlane("upperroofBay2",{} ,this.scene);
-      Roof_A_Bay[i].position.z = ((length/((length/300)+1)) * i)
-      this.setvertexData(RoofA_Bay, indices, uvsA, Roof_A_Bay[i])
-      Roof_A_Bay[i].material =this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Roughness.jpg")
-
-      Roof_A_Bay1[i] = BABYLON.CreatePlane("upperroofBay2",{} ,this.scene);
-      Roof_A_Bay1[i].position.z = ((length/((length/300)+1)) * i)-25
-      this.setvertexData(RoofA_Bay1, indices, uvsA, Roof_A_Bay1[i])
-      Roof_A_Bay1[i].material =this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Base_Color (2).jpg")
-
-      Roof_A_Bay2[i] = BABYLON.CreatePlane("upperroofBay2",{} ,this.scene);
-      Roof_A_Bay2[i].position.z = ((length/((length/300)+1)) * i)-25
-      this.setvertexData(RoofA_Bay2, indices, uvsA, Roof_A_Bay2[i])
-      Roof_A_Bay2[i].material =this.setMaterial("../../../assets/Textuers/Pillar/Galvanized_steel_02_1K_Base_Color (2).jpg")
-
-
-
-
+    //for upper side bays
+    this.CreateCommonPlane("sideBay",{height:length,width:50},new BABYLON.Vector3(0,Math.PI/2,Math.PI/2),new BABYLON.Vector3(width + 50,hight - 10,length/2), this.materialStell)
+    this.CreateCommonPlane("sideBay",{height:length,width:25},new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(width + 39, hight + 15,length/2), this.materialStell)
+    this.CreateCommonPlane("sideBay",{height:length,width:25},new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(width + 39, hight - 35,length/2), this.materialStell)
+    this.CreateCommonPlane("sideBay",{height:length,width:50},new BABYLON.Vector3(0,Math.PI/2,Math.PI/2),new BABYLON.Vector3(-37.5,hight - 10,length/2), this.materialStell)
+    this.CreateCommonPlane("sideBay",{height:length,width:25},new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(-25, hight + 15,length/2), this.materialStell)
+    this.CreateCommonPlane("sideBay",{height:length,width:25},new BABYLON.Vector3( Math.PI / 2,Math.PI/2,Math.PI/2),new BABYLON.Vector3(-25, hight - 35,length/2), this.materialStell)
+    //end upper side bays
+      
+    //back middel bay
+    this.CreateCommonPlane("MiidleBayback",{height:hight+RoofSlop,width:50},new BABYLON.Vector3(0,0,0),new BABYLON.Vector3((width/2), (hight + RoofSlop)/2 ,length), this.materialStell)
+    this.CreateCommonPlane("MiidleBayback",{height:hight+RoofSlop,width:50},new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3((width/2)+25, (hight + RoofSlop)/2 , length-12.5), this.materialStell)
+    this.CreateCommonPlane("MiidleBayback",{height:hight+RoofSlop,width:25},new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3((width/2)-25, (hight + RoofSlop)/2 , length-12.5), this.materialStell)
+      
+      
+    //front middle bay   
+    this.CreateCommonPlane("MiidleBayfront",{height:hight+RoofSlop,width:50},new BABYLON.Vector3(0,0,0),new BABYLON.Vector3((width/2), (hight + RoofSlop)/2 , 0), this.materialStell)
+    this.CreateCommonPlane("MiidleBayfront",{height:hight+RoofSlop,width:25},new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3((width/2)+25, (hight + RoofSlop)/2 , -12.5), this.materialStell)
+    this.CreateCommonPlane("MiidleBayfront",{height:hight+RoofSlop,width:25},new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3((width/2)-25, (hight + RoofSlop)/2 , -12.5), this.materialStell)
+      
+      
+         let box3= [];
+         let box4= [];
+         let box5= [];
+         let Roof_C_Bay = [];
+         let Roof_C_Bay1 = [];
+         let Roof_C_Bay2 = [];
+         let Roof_A_Bay = [];
+         let Roof_A_Bay1 = [];
+         let Roof_A_Bay2 = [];
+  for(let i=0 ; i<=Math.round(length/300)+1;i++){
+           //for upperbays
+    this.CreateCommonPlane("bays",{height:hight,width:50},new BABYLON.Vector3(0,0,0),new BABYLON.Vector3(13,hight/2 ,(length/((length/300)+1)) * i), this.materialStell)
+    this.CreateCommonPlane("bays",{height:hight,width:25},new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3(-12,hight/2 ,((length/((length/300)+1)) * i)-12.5), this.materialStell)
+    this.CreateCommonPlane("bays",{height:hight,width:25},new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3(38,hight/2 ,((length/((length/300)+1)) * i)-12.5), this.materialStell)
+        
+    this.CreateCommonPlane("bays",{height:hight,width:50},new BABYLON.Vector3(0,0,0),new BABYLON.Vector3(width,hight/2 ,((length/((length/300)+1)) * i)), this.materialStell)
+    this.CreateCommonPlane("bays",{height:hight,width:25},new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3(width-25,hight/2 ,((length/((length/300)+1)) * i) - 12.5), this.materialStell)
+    this.CreateCommonPlane("bays",{height:hight,width:25},new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3(width+25,hight/2 ,((length/((length/300)+1)) * i) - 12.5), this.materialStell)
+          //end Upper bays
+        
+          //for upper roof
+    this.CreateUpperBays("upperroofBay1",RoofC_Bay, indices,uvsC,new BABYLON.Vector3(0,0,(length/((length/300)+1)) * i), this.materialStell)
+    this.CreateUpperBays("upperroofBay1",RoofC_Bay1, indices,uvsC,new BABYLON.Vector3(0,0,(length/(((length/300)+1)) * i)-25), this.materialStell)
+    this.CreateUpperBays("upperroofBay1",RoofC_Bay2, indices,uvsC,new BABYLON.Vector3(0,0,(length/(((length/300)+1)) * i)-25), this.materialStell)
+    
+    this.CreateUpperBays("upperroofBay2",RoofA_Bay, indices,uvsA,new BABYLON.Vector3(0,0,(length/(((length/300)+1)) * i)), this.materialStell)
+    this.CreateUpperBays("upperroofBay2",RoofA_Bay1, indices,uvsA,new BABYLON.Vector3(0,0,(length/(((length/300)+1)) * i)-25), this.materialStell)
+    this.CreateUpperBays("upperroofBay2",RoofA_Bay2, indices,uvsA,new BABYLON.Vector3(0,0,(length/(((length/300)+1)) * i)-25), this.materialStell)
       //end upper roof
      }
   }
+  CreateUpperBays(name: string, RoofC_Bay: any[], indices: number[], uvsC: number[], position: BABYLON.Vector3, materialStell: string) {
+    let RoofBay = BABYLON.CreatePlane(name,{} ,this.scene);
+      this.setvertexData(RoofC_Bay, indices, uvsC, RoofBay);
+      RoofBay.position = position;
+      RoofBay.material = this.setMaterial(materialStell);
+  }
 
-  CreateCommonPlane(arg0: BABYLON.Mesh, roatation,position,material ) {
-    let Bays = arg0;
+  CreateCommonPlane(name:string,options: any, roatation,position,material ) {
+    let Bays = BABYLON.CreatePlane(name,options,this.scene);
     Bays.rotation = roatation;
     Bays.position = position;
     Bays.material = this.setMaterial(material);
   }
+  
 
   CheckDeleteMesh() {
 
