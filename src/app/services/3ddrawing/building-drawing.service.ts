@@ -455,7 +455,7 @@ export class BuildingDrawingService {
     //end upper side bays
       
 
-    // for(let i=1;i<=width/2i++){ //back middel bay
+    for(let i=1;i<=width/2;i++){ //back middel bay
       this.CreateCommonPlane(Elevation.MiidleBayback,{height:hight+RoofSlop,width:50},new BABYLON.Vector3(0,0,0),new BABYLON.Vector3((width/2), (hight + RoofSlop)/2 ,length), this.materialStell)
       this.CreateCommonPlane(Elevation.MiidleBayback,{height:hight+RoofSlop,width:25},new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3((width/2)+25, (hight + RoofSlop)/2 , length-12.5), this.materialStell)
       this.CreateCommonPlane(Elevation.MiidleBayback,{height:hight+RoofSlop,width:25},new BABYLON.Vector3(0,Math.PI / 2,0),new BABYLON.Vector3((width/2)-25, (hight + RoofSlop)/2 , length-12.5), this.materialStell)
@@ -465,7 +465,7 @@ export class BuildingDrawingService {
       this.CreateCommonPlane(Elevation.MiidleBayfront,{height:hight+RoofSlop,width:50},new BABYLON.Vector3(0,0,0),new BABYLON.Vector3((width/2), (hight + RoofSlop)/2 , 0), this.materialStell)
       this.CreateCommonPlane(Elevation.MiidleBayfront,{height:hight+RoofSlop,width:25},new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3((width/2)+25, (hight + RoofSlop)/2 , -12.5), this.materialStell)
       this.CreateCommonPlane(Elevation.MiidleBayfront,{height:hight+RoofSlop,width:25},new BABYLON.Vector3(0, Math.PI / 2,0),new BABYLON.Vector3((width/2)-25, (hight + RoofSlop)/2 , -12.5), this.materialStell)
-    // }
+    }
    
    
    
